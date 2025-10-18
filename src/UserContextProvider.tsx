@@ -20,7 +20,7 @@ const contextInitialValues = {
   deleteUser: () => null,
 };
 
-const UserContext = createContext<UserContextType>(contextInitialValues);
+export const UserContext = createContext<UserContextType>(contextInitialValues);
 
 //* **`` Use this for children props
 interface Props {
@@ -40,7 +40,7 @@ export const UserProvider = (props: Props) => {
 
   return (
     <UserContext.Provider value={{ users, addUser, updateUser, deleteUser }}>
-      {props.children}{" "}
+      {props.children}
     </UserContext.Provider>
   );
 };

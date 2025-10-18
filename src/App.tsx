@@ -1,5 +1,6 @@
 import "./App.css";
-import { User } from "./User";
+import { Countries, User } from "./User";
+import { UserProvider } from "./UserContextProvider";
 
 // let name: string = "Stu";
 // let age: number = 34;
@@ -12,15 +13,21 @@ function App() {
   const userFetched = fetchUser();
 
   return (
-    <>
+    <UserProvider>
       <User
         name={userFetched.name}
         age={userFetched.age}
         isMarried={userFetched.isMarried}
+        country={Countries.Brazil}
       />
 
-      <User name={"Katie"} age={32} isMarried={true} />
-    </>
+      <User
+        name={"Katie"}
+        age={32}
+        isMarried={true}
+        country={Countries.UnitedStates}
+      />
+    </UserProvider>
   );
 }
 
