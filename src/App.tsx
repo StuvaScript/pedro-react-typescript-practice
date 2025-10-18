@@ -1,5 +1,5 @@
 import "./App.css";
-import { Countries, User } from "./User";
+import { Countries, User, type CountryType } from "./User";
 import { UserProvider } from "./UserContextProvider";
 
 // let name: string = "Stu";
@@ -11,6 +11,9 @@ import { UserProvider } from "./UserContextProvider";
 function App() {
   const fetchUser = () => ({ name: "Stu", age: 39, isMarried: false });
   const userFetched = fetchUser();
+
+  const currentCountry: CountryType = "United States";
+  console.log("currentCountry:", currentCountry);
 
   return (
     <UserProvider>
@@ -25,7 +28,7 @@ function App() {
         name={"Katie"}
         age={32}
         isMarried={true}
-        country={Countries.UnitedStates}
+        country={Countries.France}
       />
     </UserProvider>
   );
